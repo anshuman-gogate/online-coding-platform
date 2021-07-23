@@ -16,8 +16,9 @@
         letter-spacing: 1px;
         // border-top-left-radius: 0.5rem;
         // border-top-right-radius: 0.5rem;
+        padding-left: 4.5rem;
 
-        .run-btn{ // channges here
+        .run-btn, .save-btn{ // channges here
             background-color: green;
             border: none;
             color: white;
@@ -29,10 +30,16 @@
             cursor: pointer;
             font-family: inherit;
             font-weight: bold;
+            margin-left: auto;
+            width: 5rem;
 
             &:hover{
                 background-color: rgb(4, 172, 4);
             }
+        }
+
+        .save-btn{
+            margin-left: 1.5rem;
         }
     }
 
@@ -53,6 +60,14 @@
     .editor-container{
         .CodeMirror{
             font-size: 1.4rem;
+        }
+    }
+}
+
+@media (min-width: 800px) {
+    .editor-container{
+        .editor-title{
+            padding-left: 1rem;
         }
     }
 }

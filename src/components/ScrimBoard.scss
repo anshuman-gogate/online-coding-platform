@@ -1,0 +1,56 @@
+.scrim-board{
+    margin-top: 1.5rem;
+
+    .scrim-board-header{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .scrim-board__title{
+            margin: 0;
+            padding: 0;
+            font-size: 2rem;
+        }
+
+        .new-scrim-btn{
+            padding: 0.75rem 1.5rem;
+            text-decoration: none;
+            color: white;
+            background-color: #4267b2;
+            font-size: 1rem;
+            border-radius: 0.75rem;
+            text-transform: capitalize;
+            letter-spacing: 2px;
+            font-weight: bold;
+            font-family: inherit;
+
+            &:hover{
+                background-color: #4973c7;
+            }
+        }
+    }
+
+    .all-scrims{
+        margin-top: 1.5rem;
+        display: flex;
+        flex-wrap: wrap;
+    }
+}
+
+@media(min-width: 800px) {
+    .scrim-board{
+        margin-top: 0;
+
+        .scrim-board-header{
+            .scrim-board__title{
+                font-size: 2.25rem;
+            }
+
+            .new-scrim-btn{
+                padding: 1rem 2rem;
+                font-size: 1.2rem;
+            }
+        }
+
+    }
+}

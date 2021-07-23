@@ -8,7 +8,7 @@ import 'codemirror/mode/css/css'
 import { Controlled as ControlledEditor } from 'react-codemirror2';
 
 const Editor = React.forwardRef((props, ref) => {
-    const {language , displayName, value, onChange, run} = props;
+    const {language , displayName, value, onChange, run, saveCode} = props;
 
     function handleChange(editor, data, value) {
         onChange(value);
@@ -16,7 +16,7 @@ const Editor = React.forwardRef((props, ref) => {
 
     function runCode() {
         // const outputPane = document.querySelector('.output-pane');
-        ref.current.style.display = "flex"
+        ref.current.style.display = "flex";
         run();
     }
 
@@ -25,6 +25,7 @@ const Editor = React.forwardRef((props, ref) => {
             <div className="editor-title">
                 {displayName}
                 <button className="run-btn" onClick={runCode}>Run</button>
+                <button className="save-btn" onClick={saveCode}>save</button>
             </div>
 
             <ControlledEditor 

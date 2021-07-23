@@ -1,0 +1,23 @@
+.dashboard{
+    display: flex;
+    flex-direction: column;
+    margin-top: 1rem;
+
+    .dashboard-title{
+        align-self: center;
+        margin: 0;
+        padding: 0;
+        font-size: 2rem;
+    }
+}
+
+@media (min-width: 800px) {
+    .dashboard{
+        margin-top: 0;
+
+        .dashboard-title{
+            align-self: flex-start;
+            font-size: 2.5rem;
+        }
+    }
+}

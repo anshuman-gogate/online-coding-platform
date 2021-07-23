@@ -43,6 +43,7 @@ function ContextProvider({children}) {
             if(item.id === id) {
                 item.title = updatedTitle;
             }
+            return item;
         })
 
         setAllScrims(updatedAllScrims);

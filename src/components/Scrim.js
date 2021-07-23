@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef, useContext } from 'react'
 import { Context } from '../Context';
-import { Switch, Route, Link } from 'react-router-dom'
+import { Switch, Route, Link, Redirect } from 'react-router-dom'
 import './Scrim.scss'
 import Editor from './Editor'
 
@@ -94,6 +94,10 @@ function Scrim({data}) {
 
             <div className="pane top-pane">
                 <Switch>
+                    {/* This route redirects user directly to html section */}
+                    <Route exact path={`/scrims/editor/${data.id}`}>
+                        <Redirect to={`/scrims/editor/${data.id}/html`}/>
+                    </Route>
                     <Route exact path={`/scrims/editor/${data.id}/html`}>
                         <Editor 
                             language="xml" 

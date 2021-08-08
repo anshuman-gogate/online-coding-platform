@@ -9,7 +9,10 @@ body{
     padding: 0;
     font-family: 'Source Sans Pro', sans-serif;
     position: relative;
-    background-color: #E7E4FC;
+    /* background-color: #E7E4FC; */
+    background-color: #e7f1ea;
+    min-height: 100vh;
+    color: #252525;
 }
 
 iframe{

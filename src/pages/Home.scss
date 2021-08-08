@@ -8,18 +8,34 @@
         display: flex;
         flex-wrap: wrap;
         justify-content: space-evenly;
+        margin-bottom: 0.75rem;
+        margin-top: 0.75rem;
 
         .home-nav-item{
             margin: 0;
+            font-size: 1.75rem;
+            font-weight: 600;
+            color: #606060;
+
+            a{
+                color: inherit;
+                text-decoration: none;
+    
+                // &:hover{
+                //     color: #404040;
+                //     // text-decoration: underline;
+                //     border-bottom: 8px solid #303030;
+                //     padding-bottom: 0.5rem;
+                // }
+            }
         }
 
-        a{
-            color: inherit;
-            text-decoration: none;
-
-            &:hover{
-                color: #404040;
-                text-decoration: underline;
+        .home-nav-item.active{
+            a{
+                color: #303030;
+                // text-decoration: underline;
+                border-bottom: 8px solid #303030;
+                padding-bottom: 0.5rem;
             }
         }
     }
@@ -36,6 +52,7 @@
         .home-navigations{
             flex-direction: column;
             justify-content: unset;
+            flex-wrap: unset;
             width: 200px;
             margin-top: 1rem;
             padding: 1rem 0;

@@ -1,14 +1,43 @@
-import React from 'react'
-import {Link} from 'react-router-dom'
+import React, {useState, useContext} from 'react'
+import {Link, useHistory} from 'react-router-dom'
 import './Header.scss'
 import Avatar from '@material-ui/core/Avatar'
+import { AuthContext } from '../context/AuthContext'
 
 function Header() {
+    const [error, setError] = useState('');
+    const { logout } = useContext(AuthContext);
+    const history = useHistory();
+
+    async function handleLogout() {
+        setError('');
+
+        try {
+            await logout();
+            history.push('/login');
+        }
+        catch{
+            setError('Failed to logout!');
+        }
+    }
 
     return (
         <header className="header">
             <h1 className="header__title"><Link to="/dashboard">Scrims</Link></h1>
-            <Avatar className="avatar" src="https://media-exp1.licdn.com/dms/image/C4D03AQEdBVRIDJioHQ/profile-displayphoto-shrink_400_400/0/1617359492889?e=1632355200&v=beta&t=rG1TtaVjmRR_9Nz6laZFy_Qws48ICs2zcJWiNkR_CuE"/>
+            <div className="header-nav">
+                <Avatar className="avatar" src=""/>
+
+                <div className="header-dropdown">
+                    <div className="header-dropdown__top-pane">
+                        {error && <h3 className="error-message">{error}</h3>}
+                        <div className="top-pane__item"><Link to="/dashboard">Dashboard</Link></div>
+                        <div className="top-pane__item"><Link to="/scrims">Scrims</Link></div>
+                    </div>
+                    <div className="header-dropdown__bottom-pane">
+                        <button className="logout-btn" onClick={handleLogout}>Log out</button>
+                    </div>
+                </div>
+            </div>
         </header>
     )
 }

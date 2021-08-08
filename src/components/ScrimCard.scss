@@ -1,5 +1,7 @@
 .scrim-card{
-    background-color: white;
+    // background-color: white;
+    background-color: hsl(20, 40%, 91%);
+    border: 5px solid #f5f5f5;
     padding: 1.5rem;
     display: flex;
     justify-content: space-between;
@@ -13,16 +15,44 @@
         color: inherit;
     }
 
+    .editor-link{
+        width: 75%;
+        text-decoration: underline;
+    }
+
     .scrim-card__title{
+        // display: inline-block;
         margin: 0;
+        font-size: 1.5rem;
+        font-weight: 600;
+    }
+
+    .util-btns{
+        width: 20%;
+        min-width: 75px;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
     }
 
     .util-btns *{
-        margin-left: 1.5rem;
+        margin-left: 1rem;
         cursor: pointer;
+    }
+
+    .update-title-btn{
+
+        &:hover {
+            opacity: 0.7;
+        }
+    }
+
+    .trash-btn{
+        color:#c70000;
 
         &:hover{
-            opacity: 0.7;
+            color: #af0000;
+            opacity: 1;
         }
     }
 
@@ -36,8 +66,9 @@
         display: flex;
         justify-content: center;
         display: none;
+        z-index: 100000000;
 
-        .update-title-form{
+        .modal{
             position: relative;
             width: 100%;
             max-width: 500px;
@@ -46,21 +77,59 @@
             align-self: flex-start;
             background-color: white;
             padding: 1.5rem;
-            border-radius: 0.5rem;
+            // border-radius: 0.5rem;
+
+            .logo-container{
+                display: flex;
+                justify-content: center;
+                margin-bottom: 1.125rem;
+
+                .cancel-icon{
+                    font-size: 4rem;
+                    color:rgb(250, 35, 78);
+                    font-weight: 400;
+                }
+            }
 
             .update-title{
                 text-align: center;
                 margin-top: 0;
+                // color: #1183ca;
+                color: #404040;
+                font-weight: 600;
+            }
+
+            .delete-title{
+                margin-top: 0;
+                margin-bottom: 0.75rem;
+                // color: crimson;
+                color: #808080;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+                text-align: center;
+                font-weight: 600;
+            }
+
+            .delete-desc{
+                margin: 0.5rem 0;
+                color: #808080;
+                text-align: center;
             }
 
             .update-title-input{
                 width: 100%;
                 height: 3rem;
                 padding: 0.5rem 1rem;
-                border-radius: 0.5rem;
+                // border-radius: 0.5rem;
                 outline: none;
                 border: none;
-                background-color: #ececec;;
+                background-color: #ececec;
+                background-color: #f5f5f5;
+                // border: 2px solid #c4c4c4;
+                border: 2px solid #12799b;
+                letter-spacing: 1px;
+                font-size: 0.9rem;
+                font-weight: 500;
             }
 
             .update-btns{
@@ -70,23 +139,57 @@
 
                 button{
                     padding: 0.75rem 1.5rem;
-                    background: #303030;
+                    background: #12799b;
                     color: white;
                     border: none;
                     cursor: pointer;
-                    border-radius: 0.5rem;
+                    // border-radius: 0.5rem;
                     letter-spacing: 2px;
                     font-weight: bold;
                     text-transform: uppercase;
                     font-size: 0.7rem;
 
                     &:hover{
-                        background: #404040;
+                        background: #005d7c;
                     }
 
                     &:disabled{
-                        background: #303030;
+                        background: #0f73b1;
                         cursor: not-allowed;
+                    }
+                }
+
+                .cancel-btn{
+                    // background-color: white;
+                    background-color: #808080;
+                    // color: #1183ca;
+                    color: white;
+                    // border: 1px solid #1183ca;
+
+                    &:hover{
+                        // background-color: #f5f5f5;
+                        background-color: #707070;
+                    }
+                }
+
+                .confirm-delete{
+                    background-color: crimson;
+                    color: white;
+
+                    &:hover{
+                        background-color: rgb(250, 35, 78);
+                    }
+                }
+
+                .cancel-delete{
+                    // color: #228B22;
+                    // border: 1px solid #228B22;
+                    background-color: #808080;
+                    color: white;
+                    border: none;
+
+                    &:hover{
+                        background-color: #707070;
                     }
                 }
             }
@@ -96,7 +199,13 @@
 
 @media (min-width: 800px) {
     .scrim-card{
-        width: 45%;
-        min-width: 400px;
+
+        .scrim-card__title{
+            font-size: 1.75rem;
+        }
+        
+        .util-btns *{
+            margin-left: 1.5rem;
+        }
     }
 }

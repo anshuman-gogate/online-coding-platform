@@ -6,9 +6,9 @@ import { useParams } from 'react-router-dom'
 
 function ScrimDetail() {
     const {scrimId} = useParams();
-    const intScrimId = scrimId - '0'
+    // const intScrimId = scrimId - '0'
     const { allScrims } = useContext(Context);
-    const scrim = allScrims.find(item => item.id === intScrimId);
+    const scrim = allScrims.find(item => item.id === scrimId);
     return (
         <div>
             <Scrim data={scrim}/>

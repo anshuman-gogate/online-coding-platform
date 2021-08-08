@@ -9,31 +9,56 @@
         .scrim-board__title{
             margin: 0;
             padding: 0;
-            font-size: 2rem;
+            font-size: 1.9rem;
+            font-weight: 600;
         }
 
         .new-scrim-btn{
             padding: 0.75rem 1.5rem;
             text-decoration: none;
             color: white;
-            background-color: #4267b2;
+            background-color: #12799b;
             font-size: 1rem;
-            border-radius: 0.75rem;
+            // border-radius: 0.75rem;
             text-transform: capitalize;
             letter-spacing: 2px;
-            font-weight: bold;
+            font-weight: 600;
             font-family: inherit;
+            text-align: center;
+            margin-left: 1rem;
 
             &:hover{
-                background-color: #4973c7;
+                background-color: #016a8d;
             }
         }
     }
 
     .all-scrims{
         margin-top: 1.5rem;
-        display: flex;
-        flex-wrap: wrap;
+        // display: flex;
+        // flex-wrap: wrap;
+        padding-right: 2rem;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-gap: 1rem;
+        grid-column-gap: 2rem;
+    }
+}
+
+@media (max-width: 350px) {
+    .scrim-board{
+
+        .scrim-board-header{
+
+            .scrim-board__title{
+                font-size: 1.75rem;
+            }
+
+            .new-scrim-btn{
+                padding: 0.75rem 1.25rem;
+                font-size: 0.8rem;
+            }
+        }
     }
 }
 
@@ -51,6 +76,13 @@
                 font-size: 1.2rem;
             }
         }
+    }
+}
 
+@media (min-width: 900px) {
+    .scrim-board{
+        .all-scrims{
+            grid-template-columns: 1fr 1fr;
+        }
     }
 }

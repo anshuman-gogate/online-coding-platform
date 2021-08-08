@@ -15,11 +15,11 @@ function NewScrim() {
 
     return (
         <div className="new-scrim">
-            <h1 className="new-scrim__title">Create a New Scrim</h1>
+            <h1 className="new-scrim__title">Create a New Project</h1>
             <input 
                 type="text" 
                 className="new-scrim-input"
-                placeholder="Title of scrim" 
+                placeholder="Title of project" 
                 value={title} 
                 onChange={handleChange}
             />

@@ -5,9 +5,12 @@ import './Scrim.scss'
 import Editor from './Editor'
 
 function Scrim({data}) {
-    const [html, setHtml] = useState(data.html);
-    const [css, setCss] = useState(data.css);
-    const [js, setJs] = useState(data.js);
+    const firebaseHTML = data.html ? data.html : '';
+    const firebaseCSS = data.css ? data.css : '';
+    const firebaseJs = data.js ? data.js : '';
+    const [html, setHtml] = useState(firebaseHTML);
+    const [css, setCss] = useState(firebaseCSS);
+    const [js, setJs] = useState(firebaseJs);
     const [srcDoc, setSrcDoc] = useState('');
     const outputPaneContainerRef = useRef(null);
     const outputPaneRef = useRef(null);
